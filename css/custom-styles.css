@@ -1,0 +1,21 @@
+/**
+--maximum-blue: #31b9d4ff;
+--light-sea-green: #37beb0ff;
+--magic-mint: #a0eec0ff;
+--magic-mint-2: #95ecc1ff;
+--magic-mint-3: #8ae9c1ff;
+--emerald: #63d589ff;
+--pistachio: #86cd82ff;
+--russian-green: #769c76ff;
+--xanadu: #6e8470ff;
+--davys-grey: #4b514eff;
+**/
+
+
+#bootstrap-overrides .container-fluid{
+  background-color: red;
+}
+
+#bootstrap-overrides .navbar .navbar-expand-lg .navbar-light .bg-light{
+  background-color: purple;
+}

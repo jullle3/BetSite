@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- BootStrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- Latest compiled BootStrap JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- For charts/visualization -->
+    <script src="js/Chart.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="css/base.css"> -->
+</head>
+<body>
+
+<!-- Carousel -->
+<h2 class="text-center">Seneste odds</h2>
+<div id="bet_carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" id="carousel-inner-id"></div>
+    <a class="carousel-control-prev " href="#bet_carousel" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+    <a class="carousel-control-next" href="#bet_carousel" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+</div>
+
+
+<!-- Big graph -->
+<!--<div style="width:30%;height: 30%">-->
+<!--
+<div class="container" style="width:50%;height:50%">
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <canvas id="myChart" width="100" height="100"></canvas>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

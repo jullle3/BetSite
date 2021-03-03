@@ -24,12 +24,12 @@ $(document).ready(function(){
 
         // Graph
         var ctx = document.getElementById('myChart');
-        var myChart = new Chart(ctx, {
+        new Chart(ctx, {
             type: 'line',
             data: {
                 labels: data["graph_data"]["total"]["x-axis"],
                 datasets: [{
-                    label: "Winnings",
+                    label: "Profit ved indskud af 100 kr",
                     data: data["graph_data"]["total"]["y-axis"],
                     borderColor:"rgb(72, 200, 106)",
                     //backgroundColor:"rgb(72, 200, 106)",

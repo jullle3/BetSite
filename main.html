@@ -10,15 +10,43 @@
     <script src="js/jquery-3.1.1.min.js"></script>
 
     <!-- Popper JS -->
-    <!--script src="js/popper.min.js"></script-->
+    <script src="js/popper.min.js"></script>
 
     <!-- Latest compiled BootStrap JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <script src="js/html_populators.js"></script>
+
     <!-- <link rel="stylesheet" href="css/base.css"> -->
 
 </head>
-<body>
+<body onload="populateAccordion()">
+
+<!-- JumboTron -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 style="margin-bottom: 1rem">Vejledning til brug af modellen</h1>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            <p style="display: inline">Benyt altid det samme indskud på odds (eksempelvis 10, 50 eller 100 kr)</p> <p></p>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            <p style="display: inline">Spil på alle kampe modellen fastsætter</p> <p></p>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            <p style="display: inline">Spil aldrig for penge du ikke har råd til at tabe!</p> <p></p>
+        </svg>
+    </div>
+</div>
+
+
+<!-- List of bets -->
+<h2 class="text-center">Kommende odds</h2>
+<div id="accordion">
+</div>
 
 </body>
 </html>

@@ -9,14 +9,19 @@ $(document).ready(function(){
             if (i >= 10) break;  // max 10 carousel elementer
             let entry = data["all_placed_bets"][bets_len - (i + 1) ];  // -1 for at undgå off by one
 
-            const div = document.createElement('div');
-            let s = '<p>' + entry["description"] + " "
-            s += (entry["result"] === "win") ? '✔' : '️❌';
-            s += '</p>';
-            div.className = 'carousel-item text-center';
-            div.innerHTML = s
-            document.getElementById("carousel-inner-id").appendChild(div)  // Tilføj til carousel
+            let text_element = document.createElement("h5")
+            text_element.innerText = entry["description"]
 
+            const span = document.createElement("span")
+            span.className = (entry["result"] === "win") ? 'badge badge-success' : 'badge badge-danger'
+            span.innerText = (entry["result"] === "win") ? "Vundet" : "Tabt"
+            span.style.marginLeft = "1rem"
+            text_element.appendChild(span)
+
+            const carousel_element = document.createElement('div');
+            carousel_element.className = 'carousel-item text-center';
+            carousel_element.appendChild(text_element)
+            document.getElementById("carousel-inner-id").appendChild(carousel_element)  // Tilføj til carousel
         }
         $('.carousel-item').first().addClass('active');
         $('#bet_carousel').carousel();
@@ -50,10 +55,3 @@ $(document).ready(function(){
     })
 });
 
-/* Grafer! */
-// Any of the following formats may be used
-//var ctx = document.getElementById('myChart').getContext('2d');
-//var ctx = $('#myChart');
-//var ctx = 'myChart';
-//var Chart = require('chart.js');
-//var myChart = new Chart(ctx, {...});

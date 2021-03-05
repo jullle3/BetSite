@@ -5,6 +5,7 @@
     <title>Title</title>
     <!-- BootStrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- jQuery library -->
     <script src="js/jquery-3.1.1.min.js"></script>
@@ -16,11 +17,13 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script src="js/html_populators.js"></script>
+    <script src="js/load-components.js"></script>
 
     <!-- <link rel="stylesheet" href="css/base.css"> -->
 
 </head>
-<body onload="populateAccordion()">
+<body onload="loadHTML()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="placeholder-navbar"></nav>
 
 <!-- JumboTron -->
 <div class="jumbotron jumbotron-fluid">
@@ -37,16 +40,29 @@
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-            <p style="display: inline">Spil aldrig for penge du ikke har råd til at tabe!</p> <p></p>
+            <p style="display: inline">Spil kun for penge du har råd til at tabe eller søg</p> <a href="https://www.spillemyndigheden.dk/rofus" target="_blank" rel="noopener noreferrer">hjælp</a> <p></p>
         </svg>
     </div>
 </div>
 
 
+<!-- Populate accordion / kommende bets list -->
+<script>
+    window.addEventListener("load",(e)=>{
+        populateAccordion()
+    });
+</script>
+
 <!-- List of bets -->
 <h2 class="text-center">Kommende odds</h2>
-<div id="accordion">
-</div>
+<div id="accordion"></div>
+
+
+<!-- Ser grimt ud når kommende bets loader på 0.5-2 sec, da footeren er helt i toppen af skærmen. Måske indsæt delay på load af footer? -->
+<!-- Modals / Pop ups. Loades af JS -->
+<!-- <div id="placeholder_all_modals"></div> -->
+<!-- Footer -->
+<!-- <footer id="placeholder_footer"></footer> -->
 
 </body>
 </html>

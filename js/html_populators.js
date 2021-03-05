@@ -9,6 +9,11 @@ function populateAccordion() {
             const bet = upcoming_bets[i]
             const card = document.createElement("div")
             card.className = "card"
+            if (i % 2 === 0){
+                card.style = "background-color: rgba(0,0,0,.00)"
+            } else {
+                card.style = " background-color: rgba(0,0,0,.05)"
+            }
 
             // Create Card Header
             const card_header = document.createElement("div")
@@ -25,8 +30,8 @@ function populateAccordion() {
             button.innerHTML = bet["description"]
 
             const span = document.createElement("span")
-            span.className = "badge badge-primary"
-            span.innerHTML = "Ikke afsluttet"
+            span.className = "badge badge-info"
+            span.innerHTML = bet["date"]
 
             // Byg card-header hierarki
             card.appendChild(card_header)

@@ -1,26 +1,73 @@
-var nav_bar = 
-'<nav class="navbar navbar-expand-lg navbar-light bg-light">\
-<div class="container-fluid">\
-  <a class="navbar-brand" href="#">Navbar</a>\
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">\
-    <span class="navbar-toggler-icon"></span>\
-  </button>\
-  <div class="collapse navbar-collapse" id="navbarNav">\
-    <ul class="navbar-nav">\
-      <li class="nav-item">\
-        <a class="nav-link active" aria-current="page" href="#">Home</a>\
-      </li>\
-      <li class="nav-item">\
-        <a class="nav-link" href="#">Features</a>\
-      </li>\
-      <li class="nav-item">\
-        <a class="nav-link" href="#">Pricing</a>\
-      </li>\
-    </ul>\
-  </div>\
-</div>\
-</nav>\''
+var nav_bar =
+    '        <a class="navbar-brand" href="#">Find nu på et navn..:)</a>\n' +
+    '        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">\n' +
+    '            <span class="navbar-toggler-icon"></span>\n' +
+    '        </button>\n' +
+    '        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">\n' +
+    '            <div class="navbar-nav">\n' +
+    '                <a class="nav-item nav-link" href="#">Overblik</a>\n' +
+    '                <a class="nav-item nav-link" href="main.html">Kommende odds</a>\n' +
+    '                <a class="nav-item nav-link" href="#">Historik</a>\n' +
+    '                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>\n' +
+    '                <a class="nav-item nav-link disabled" href="#">Login</a>\n' +
+    '            </div>\n' +
+    '        </div>'
 
-function setNavBar() {
+
+var all_modals =
+    '        <div class="modal fade" id="modal_hvordan">\n' +
+    '            <div class="modal-dialog">\n' +
+    '                <div class="modal-content">\n' +
+    '\n' +
+    '                    <!-- Modal Header -->\n' +
+    '                    <div class="modal-header">\n' +
+    '                        <h4 class="modal-title">Kontakt</h4>\n' +
+    '                        <button type="button" class="close" data-dismiss="modal">×</button>\n' +
+    '                    </div>\n' +
+    '\n' +
+    '                    <!-- Modal body -->\n' +
+    '                    <div class="modal-body">\n' +
+    '                        <p>Todo</p>\n' +
+    '                    </div>\n' +
+    '\n' +
+    '                    <!-- Modal footer -->\n' +
+    '                    <div class="modal-footer">\n' +
+    '                        <button type="button" class="btn btn-primary" data-dismiss="modal">Luk</button>\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '        </div>'
+
+
+var footer =
+    '        <div class="bottom-banner">\n' +
+    '            <div class="row navbar-dark">\n' +
+    '                <div class="col-sm-6">\n' +
+    '\n' +
+//    '                    <div class="container text-center" style="color:#b1afaf">\n' +
+    '                    <div class="container text-center " style="color:#b1afaf">\n' +
+    '                        <p></p>\n' +
+    '                        <p>Alle odds er vist med værdien oddset stod til da det blev hentet</p>\n' +
+    '                        <p>Der tages forbehold for oddsændringer fra de enkelte bookmakers, & fejl</p>\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '                <div class="col-sm-6">\n' +
+    '                    <div class="container text-center">\n' +
+    '                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_om">Overblik</a>\n' +
+    '                        <a class="nav-item nav-link" href="main.html">Kommende odds</a>\n' +
+    '                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_rapporter_fejl">Historik</a>\n' +
+    '                        <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>\n' +
+    '                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_rapporter_fejl">FAQ</a>\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '\n' +
+    '            <div class="footer-copyright" style="color:#b1afaf">\n' +
+    '                <p>© 2021 Copyright SOME_NAME.dk. All Rights Reserved.</p>\n' +
+    '            </div>\n' +
+    '        </div>'
+function loadHTML() {
   document.getElementById('placeholder-navbar').innerHTML = nav_bar;
+  document.getElementById('placeholder_all_modals').innerHTML = all_modals;
+  document.getElementById('placeholder_footer').innerHTML = footer;
 }

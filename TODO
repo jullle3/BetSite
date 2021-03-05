@@ -1,0 +1,10 @@
+- Y-aksen skal have "kr" tilføjet
+- Styling af layout (inklusiv farver om nødvendigt)
+- Authentication
+- Login - Hvordan håndteres bruger konti?
+- history.html - nem at lave med chart.js, det meste data står klar fra backend. Skal også inkludere ALLE spillede odds med resultat
+- Benchmark, hvad hvis der kommer rigtigt mange besøgende?
+- Betaling skal implementeres på en eller anden måde
+- Branding på Instagram, Facebook og Twitter
+- Ser grimt ud når kommende bets loader på 0.5-2 sec, da footeren er helt i toppen af skærmen. Måske indsæt delay på load af footer?
+

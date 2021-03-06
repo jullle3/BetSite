@@ -17,6 +17,7 @@
   <script src="js/bootstrap.min.js"></script>
 
   <script src="js/load-components.js"></script>
+  <script src="js/history.js"></script>
 
 </head>
 <body onload="loadHTML()">
@@ -28,12 +29,10 @@
   <div class="container">
     <h2 style="margin-bottom: 1rem">Overblik over alle historiske odds fundet af modellen</h2>
 
-    <!--
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
         <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-        <p style="display: inline">Spil kun for penge du har råd til at tabe eller søg</p> <a href="https://www.spillemyndigheden.dk/rofus" target="_blank" rel="noopener noreferrer">hjælp</a> <p></p>
+        <p style="display: inline">Bemærk at nogle odds optræder flere gange på samme dag, hvilke skyldes at der nogle gange afspilles kampe med Best of 3/5 playoff formatet </p> <p></p>
     </svg>
-    -->
   </div>
 </div>
 
@@ -46,12 +45,13 @@
     <div class="col-sm-12">
       <h2>Historiske odds</h2>
       <div class="table-wrapper-scroll-y">
-        <table id="table-audi" class="table table-striped table-hover">
+          <table id="table-history" class="table table-striped table-hover">
           <thead>
           <tr>
-            <th>Model</th>
-            <th>Pris i kr ,-</th>
-            <th>Pris i kr ,-</th>
+            <th>Beskrivelse</th>
+            <th>Odds</th>
+            <th>Dato</th>
+            <th>Resultat</th>
           </tr>
           </thead>
           <tbody>

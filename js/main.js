@@ -52,6 +52,14 @@ $(document).ready(function(){
             }
         });
 
+        // Replace tekst for winnings
+        ele = document.getElementById("index_jumbo1")
+        ele.innerText = ele.innerText.replace("N/A", data["total_winnings"] + "%")
+
+        ele = document.getElementById("index_historic_profit")
+        ele.innerText = ele.innerText.replace("N/A", data["total_winnings"])
+
+        console.log("replaced")
     })
 });
 

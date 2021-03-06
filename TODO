@@ -7,5 +7,7 @@
 - Betaling skal implementeres på en eller anden måde
 - Branding på Instagram, Facebook og Twitter
 - Ser grimt ud når kommende bets loader på 0.5-2 sec, da footeren er helt i toppen af skærmen. Måske indsæt delay på load af footer?
+Bør være bedre performance med backend nu
+- Seneste odds indeholder for mange tabte odds :)
 
 -test

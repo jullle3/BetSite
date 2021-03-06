@@ -1,13 +1,13 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     // Indsætter data i carousel
-    $.getJSON('https://biler-i-danmark-api.ew.r.appspot.com/storage/get_bets').done(function(data) {
-    //$.getJSON('http://localhost:5000/local_get_bets').done(function(data) {
+    $.getJSON('https://biler-i-danmark-api.ew.r.appspot.com/storage/get_bets').done(function (data) {
+        //$.getJSON('http://localhost:5000/local_get_bets').done(function(data) {
         let i;
         let bets_len = data["all_placed_bets"].length;
-        for (i = 0; i < bets_len; i++){
+        for (i = 0; i < bets_len; i++) {
             if (i >= 10) break;  // max 10 carousel elementer
-            let entry = data["all_placed_bets"][bets_len - (i + 1) ];  // -1 for at undgå off by one
+            let entry = data["all_placed_bets"][bets_len - (i + 1)];  // -1 for at undgå off by one
 
             let text_element = document.createElement("h5")
             text_element.innerText = entry["description"]
@@ -36,9 +36,9 @@ $(document).ready(function(){
                 datasets: [{
                     label: "Profit ved indskud af 100 kr",
                     data: data["graph_data"]["total"]["y-axis"],
-                    borderColor:"rgb(72, 200, 106)",
+                    borderColor: "rgb(72, 200, 106)",
                     //backgroundColor:"rgb(72, 200, 106)",
-                    fill:true
+                    fill: true
                 }]
             },
             options: {
@@ -54,6 +54,9 @@ $(document).ready(function(){
 
         // Replace tekst for winnings
         ele = document.getElementById("index_jumbo1")
+        ele.innerText = ele.innerText.replace("N/A", data["total_winnings"] + "%")
+
+        ele = document.getElementById("index_jumbo2")
         ele.innerText = ele.innerText.replace("N/A", data["total_winnings"] + "%")
 
         ele = document.getElementById("index_historic_profit")

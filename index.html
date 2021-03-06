@@ -3,116 +3,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!-- BootStrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- BootStrap css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
 
-    <!-- jQuery library -->
-    <script src="js/jquery-3.1.1.min.js"></script>
+  <!-- jQuery library -->
+  <script src="js/jquery-3.1.1.min.js"></script>
 
-    <!-- Popper JS -->
-    <!--script src="js/popper.min.js"></script-->
+  <!-- Popper JS -->
+  <!--script src="js/popper.min.js"></script-->
 
-    <!-- Latest compiled BootStrap JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+  <!-- Latest compiled BootStrap JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
 
-    <!-- <link rel="stylesheet" href="css/base.css"> -->
-    <!-- For charts/visualization -->
-    <script src="js/Chart.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/base.css"> -->
+  <!-- For charts/visualization -->
+  <script src="js/Chart.min.js"></script>
 
-    <script src="js/load-components.js"></script>
+  <script src="js/load-components.js"></script>
 </head>
 
 <body onload="loadHTML()">
-    <!--<div id="placeholder-navbar"></div>-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="placeholder-navbar">
-    </nav>
+<!--<div id="placeholder-navbar"></div>-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="placeholder-navbar">
+</nav>
 
 
-    <!-- Stort billede. Synes det bør være i baggrunden med tekst over, hvis det overhovedet kan bruges
-    <img src="pictures/plant_huge.jpg" style="width: 100%; clip: rect(0, auto, 600px, 0); position: absolute" >
-    -->
+<!-- Stort billede. Synes det bør være i baggrunden med tekst over, hvis det overhovedet kan bruges
+<img src="pictures/plant_huge.jpg" style="width: 100%; clip: rect(0, auto, 600px, 0); position: absolute" >
+-->
 
-    <!-- JumboTron -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
+<!-- JumboTron -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
 
-            <!-- Alternativ titel -->
-<!--            <h1>Odds rådgivning der betaler sig!</h1> -->
-            <h1 id="index_jumbo1" style="margin-top:30px">Danmarks førende side til at finde gode odds. N/A profit siden Juli 2020!</h1>
-            <p>Pengene retur for hvert måned uden profit</p>
-        </div>
+    <!-- Alternativ titel -->
+    <!--            <h1>Odds rådgivning der betaler sig!</h1> -->
+    <h1 id="index_jumbo1" style="margin-top:30px">Danmarks førende side til at finde gode odds. N/A profit siden Juli
+      2020!</h1>
+    <p>Pengene retur for hvert måned uden profit</p>
+  </div>
+</div>
+
+
+<h2 class="text-center">Historisk profit for modellen</h2>
+<h1 id="index_historic_profit" class="text-center text-success">N/A kr</h1>
+<h5 class="text-center">Ved indskud af 100 kr</h5>
+
+<!-- Big graph -->
+<!--<div style="width:30%;height: 30%">-->
+<!--
+<div class="container" style="width:50%;height:50%">
+-->
+<div class="container" style="margin-top: 2rem">
+  <div class="row">
+    <div class="col">
+      <canvas id="myChart"></canvas>
     </div>
+  </div>
+</div>
+
+<!-- Horizontal line
+<hr style="border: 1px solid; color: #e9ecef" class="rounded">
+-->
+
+<!-- Carousel -->
+<h2 class="text-center" style="margin-top: 2rem">Seneste odds</h2>
+<div id="bet_carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" id="carousel-inner-id"></div>
+  <a class="carousel-control-prev " href="#bet_carousel" data-slide="prev"><span
+          class="carousel-control-prev-icon"></span></a>
+  <a class="carousel-control-next" href="#bet_carousel" data-slide="next"><span
+          class="carousel-control-next-icon"></span></a>
+</div>
 
 
-    <h2 class="text-center">Historisk profit for modellen</h2>
-    <h1 id="index_historic_profit" class="text-center text-success">N/A kr</h1>
-    <h5 class="text-center">Ved indskud af 100 kr</h5>
-
-    <!-- Big graph -->
-    <!--<div style="width:30%;height: 30%">-->
-    <!--
-    <div class="container" style="width:50%;height:50%">
-    -->
-    <div class="container" style="margin-top: 2rem">
-        <div class="row">
-            <div class="col">
-                <canvas id="myChart"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <!-- Horizontal line
-    <hr style="border: 1px solid; color: #e9ecef" class="rounded">
-    -->
-
-    <!-- Carousel -->
-    <h2 class="text-center" style="margin-top: 2rem">Seneste odds</h2>
-    <div id="bet_carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" id="carousel-inner-id"></div>
-        <a class="carousel-control-prev " href="#bet_carousel" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
-        <a class="carousel-control-next" href="#bet_carousel" data-slide="next"><span class="carousel-control-next-icon"></span></a>
-    </div>
-
-
-
-    <!-- JumboTron -->
-    <div class="jumbotron jumbotron-fluid" style="margin-top: 2rem; margin-bottom: 0px;">
-        <div class="container text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <p style="display: inline">Pengene retur for hvert måned uden profit</p> <p></p>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <p style="display: inline">Odds findes med en verificeret og veludviklet model</p> <p></p>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <p style="display: inline">2674% profit siden Juli 2020</p> <p></p>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <!--<p style="display: inline">Spil på din foretrukne bookmaker</p> <p></p>-->
-                <p style="display: inline">5-10 nye odds om ugen</p> <p></p>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <p style="display: inline">Ingen binding</p> <p></p>
-            </svg>
-        </div>
-    </div>
-    <script src="js/main.js"></script>
+<!-- JumboTron -->
+<div class="jumbotron jumbotron-fluid" style="margin-top: 2rem; margin-bottom: 0px;">
+  <div class="container text-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+         viewBox="0 0 16 16">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <p style="display: inline">Pengene retur for hvert måned uden profit</p>
+      <p></p>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+         viewBox="0 0 16 16">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <p style="display: inline">Odds findes med en verificeret og veludviklet model</p>
+      <p></p>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+         viewBox="0 0 16 16">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <p id="index_jumbo2" style="display: inline">N/A profit siden Juli 2020</p>
+      <p></p>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+         viewBox="0 0 16 16">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <!--<p style="display: inline">Spil på din foretrukne bookmaker</p> <p></p>-->
+      <p style="display: inline">5-10 nye odds om ugen</p>
+      <p></p>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+         viewBox="0 0 16 16">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <p style="display: inline">Ingen binding</p>
+      <p></p>
+    </svg>
+  </div>
+</div>
+<script src="js/main.js"></script>
 
 
-    <!-- Modals / Pop ups. Loades af JS -->
-    <div id="placeholder_all_modals"></div>
+<!-- Modals / Pop ups. Loades af JS -->
+<div id="placeholder_all_modals"></div>
 
-    <!-- Footer -->
-    <footer id="placeholder_footer">
-    </footer>
+<!-- Footer -->
+<footer id="placeholder_footer">
+</footer>
 
 </body>
 </html>

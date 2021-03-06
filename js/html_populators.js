@@ -1,15 +1,15 @@
 function populateAccordion() {
     // Opfylder accordion med data, som viser kommende odds
 
-    $.getJSON('https://biler-i-danmark-api.ew.r.appspot.com/storage/get_upcoming_bets').done(function(upcoming_bets) {
-    //$.getJSON('http://localhost:5000/storage/get_upcoming_bets').done(function(upcoming_bets) {
+    $.getJSON('https://biler-i-danmark-api.ew.r.appspot.com/storage/get_upcoming_bets').done(function (upcoming_bets) {
+        //$.getJSON('http://localhost:5000/storage/get_upcoming_bets').done(function(upcoming_bets) {
         let i;
         let upcoming_bets_count = upcoming_bets.length
-        for (i = 0; i < upcoming_bets_count; i++){
+        for (i = 0; i < upcoming_bets_count; i++) {
             const bet = upcoming_bets[i]
             const card = document.createElement("div")
             card.className = "card"
-            if (i % 2 === 0){
+            if (i % 2 === 0) {
                 card.style = "background-color: rgba(0,0,0,.00)"
             } else {
                 card.style = " background-color: rgba(0,0,0,.05)"

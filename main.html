@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="css/main.css">
 
   <!-- jQuery library -->
-  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/libs/jquery-3.1.1.min.js"></script>
 
   <!-- Latest compiled BootStrap JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
 
   <script src="js/load-components.js"></script>
   <script src="js/utils.js"></script>
@@ -56,23 +56,11 @@
 </div>
 
 
-<!-- Populate accordion / kommende bets list -->
-<script>
-    window.addEventListener("load", (e) => {
-        populateAccordion()
-    });
-</script>
-
 <h2 id="must_login_message" class="text-center" hidden>
   <span class="text-center badge badge-dark align-middle">Du skal være logget ind og have betalt abonnement for at se denne side</span>
   <br>
   <span class="text-center badge badge-primary mt-4" data-toggle="modal" data-target="#loginModal" style="cursor:pointer">Log in</span>
 </h2>
-<!-- Det gamle
-<h2 id="incoming_bets_message" class="text-center" hidden>Kommende odds</h2>
-<div id="accordion"></div>
--->
-
 
 <!-- List of bets -->
 <div id="incoming_bets_outer_div" class="container" hidden>

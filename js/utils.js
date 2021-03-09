@@ -4,6 +4,12 @@ function login() {
     let form = new FormData(document.getElementById("form_login"));
     let email = form.get("email");
     let password = form.get("password");
+    let error_element = document.getElementById("sign_in_text")
+
+    if (!valid_email(email)){
+        error_handler(error_element, "Ugyldig email. <br>Prøv igen")
+        return
+    }
 
     $.post(host + "/login", {email: email, password: password}, function (data) {
         let jwt = data["jwt"]
@@ -14,9 +20,7 @@ function login() {
     })
         .fail(function () {
             console.log("Failed!")
-            let e = document.getElementById("sign_in_text")
-            e.innerHTML = "Forkert brugernavn eller password.<br> Prøv igen"
-            e.style = "color: #dc3545"
+            error_handler(error_element, "Forkert brugernavn eller password.<br>Prøv igen")
         })
 }
 
@@ -30,6 +34,47 @@ function logout() {
 
 
 function create_user() {
+    let form = new FormData(document.getElementById("form_create_user"));
+    let email1 = form.get("email1");
+    let email2 = form.get("email2");
+    let password1 = form.get("password1");
+    let password2 = form.get("password2");
+
+    let error_text_ref = document.getElementById("create_user_text")
+
+    if (email1.length === 0 || email2.length === 0 || password1.length === 0 || password2.length === 0){
+        error_handler(error_text_ref, "Udfyld alle felter")
+        return
+    }
+
+    if (email1 !== email2){
+        error_handler(error_text_ref, "Emails er ikke ens")
+        return
+    }
+
+
+    if (!valid_email(email1)){
+        error_handler(error_text_ref, "Ugyldig email. <br>Prøv igen")
+        return
+    }
+
+    if (password1 !== password2){
+        error_handler(error_text_ref, "Passwords er ikke ens")
+        return
+    }
+
+    $.post(host + "/create_user", {email: email1, password: password1}, function (data) {
+        // Log brugeren ind
+        let jwt = data["jwt"]
+        window.localStorage.setItem("jwt", jwt)
+        document.getElementById("nav_logout").hidden = false
+        document.getElementById("nav_login").hidden = true
+        document.location = "main.html"
+    })
+        .fail(function () {
+            console.log("Failed!")
+            error_handler(error_text_ref, "En bruger med det denne email adresse eksisterer allerede")  // Brug fejlen fra serveren?
+        })
 }
 
 
@@ -209,3 +254,20 @@ function load_history_data() {
     })
 }
 
+
+function error_handler(error_element, error_text) {
+    // Sort magi til at genstarte en animation :)
+    error_element.classList.remove("error-message");
+    void error_element.offsetWidth;
+    error_element.classList.add("error-message");
+
+    error_element.innerHTML = error_text
+    error_element.style.color = "#dc3545"
+
+    error_element.style.animationPlayState = "running"
+}
+
+
+function valid_email(email){
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+}

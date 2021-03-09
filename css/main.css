@@ -125,3 +125,18 @@ div.footer-copyright {
     display: inline-block;
     margin: 100px auto;
 }
+
+.error-message {
+    animation: .8s shake;
+    animation-play-state: paused;
+}
+
+@keyframes shake {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }
+}
+

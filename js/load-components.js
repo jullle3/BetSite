@@ -37,6 +37,7 @@ var all_modals =
     '                </div>\n' +
     '            </div>\n' +
     '        </div>' +
+
     '<div id="loginModal" class="modal fade">\n' +
     '  <div class="modal-dialog modal-login">\n' +
     '    <div class="modal-content">\n' +
@@ -55,7 +56,7 @@ var all_modals =
     '          <div class="form-group">\n' +
     '            <div class="input-group">\n' +
     '              <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n' +
-    '              <input type="text" class="form-control" name="password" placeholder="Password" required="required">\n' +
+    '              <input type="password" class="form-control" name="password" placeholder="Kode" required="required">\n' +
     '            </div>\n' +
     '          </div>\n' +
     '          <div class="form-group">\n' +
@@ -64,7 +65,47 @@ var all_modals =
     '          <p class="hint-text"><a href="#">Glemt password?</a></p>\n' +
     '        </form>\n' +
     '      </div>\n' +
-    '      <div class="modal-footer">Ny bruger? <a href="#">Opret her</a></div>\n' +
+    '      <div class="modal-footer">Ny bruger? <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#create_user_modal">Opret her</a></div>\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '</div>' +
+    '\n' +
+
+    '<div id="create_user_modal" class="modal fade" style="z-index: 5000; position: absolute">\n' +
+    '  <div class="modal-dialog modal-login">\n' +
+    '    <div class="modal-content" style="min-height: 24rem">\n' +
+    '      <div class="modal-header">\n' +
+    '        <h4 class="modal-title" id="create_user_text">Opret bruger</h4>\n' +
+    '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n' +
+    '      </div>\n' +
+    '      <div class="modal-body">\n' +
+    '        <form id="form_create_user">\n' +
+    '          <div class="form-group">\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-user"></i></span>\n' +
+    '              <input type="text" class="form-control" name="email1" placeholder="Email" required="required">\n' +
+    '            </div>\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-user"></i></span>\n' +
+    '              <input type="text" class="form-control" name="email2" placeholder="Gentag email" required="required">\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="form-group">\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n' +
+    '              <input type="password" class="form-control" name="password1" placeholder="Kode" required="required">\n' +
+    '            </div>\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n' +
+    '              <input type="password" class="form-control" name="password2" placeholder="Gentag kode" required="required">\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="form-group">\n' +
+    '            <button type="button" class="btn btn-primary btn-block btn-lg" onclick="create_user()">Opret bruger</button>\n' +
+    '          </div>\n' +
+    '        </form>\n' +
+    '      </div>\n' +
+    '      <!--<div class="modal-footer">Eksisterende bruger? <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log ind her</a></div> -->\n' +
     '    </div>\n' +
     '  </div>\n' +
     '</div>' +

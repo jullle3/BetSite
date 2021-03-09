@@ -8,7 +8,8 @@ var nav_bar =
     '                <a class="nav-item nav-link" href="main.html">Kommende odds</a>\n' +
     '                <a class="nav-item nav-link" href="history.html">Historik</a>\n' +
     '                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>\n' +
-    '                <a class="nav-item nav-link disabled" href="#">Login</a>\n' +
+    '                <a id="nav_login" class="nav-item nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log ind</a>\n' +
+    '                <a id="nav_logout" onclick="logout()" class="nav-item nav-link" hidden style="cursor:pointer">Log ud</a>\n' +
     '            </div>\n' +
     '        </div>'
 
@@ -35,7 +36,39 @@ var all_modals =
     '                    </div>\n' +
     '                </div>\n' +
     '            </div>\n' +
-    '        </div>'
+    '        </div>' +
+    '<div id="loginModal" class="modal fade">\n' +
+    '  <div class="modal-dialog modal-login">\n' +
+    '    <div class="modal-content">\n' +
+    '      <div class="modal-header">\n' +
+    '        <h4 class="modal-title" id="sign_in_text">Log ind</h4>\n' +
+    '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n' +
+    '      </div>\n' +
+    '      <div class="modal-body">\n' +
+    '        <form id="form_login">\n' +
+    '          <div class="form-group">\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-user"></i></span>\n' +
+    '              <input type="text" class="form-control" name="email" placeholder="Email" required="required">\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="form-group">\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n' +
+    '              <input type="text" class="form-control" name="password" placeholder="Password" required="required">\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="form-group">\n' +
+    '            <button type="button" class="btn btn-primary btn-block btn-lg" onclick="login()">Log ind</button>\n' +
+    '          </div>\n' +
+    '          <p class="hint-text"><a href="#">Glemt password?</a></p>\n' +
+    '        </form>\n' +
+    '      </div>\n' +
+    '      <div class="modal-footer">Ny bruger? <a href="#">Opret her</a></div>\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '</div>' +
+    ''
 
 
 var footer =
@@ -66,8 +99,40 @@ var footer =
     '            </div>\n' +
     '        </div>'
 
-function loadHTML() {
+
+function loadHTML(skip_footer=false) {
     document.getElementById('placeholder-navbar').innerHTML = nav_bar;
     document.getElementById('placeholder_all_modals').innerHTML = all_modals;
-    document.getElementById('placeholder_footer').innerHTML = footer;
+
+    if (!skip_footer) {
+        document.getElementById('placeholder_footer').innerHTML = footer;
+    }
+
+    // Updater UI afhængigt af om man er logget ind
+    logout_nav = document.getElementById("nav_logout")
+    login_nav = document.getElementById("nav_login")
+    jwt = window.localStorage.getItem("jwt")
+
+    // Ikke logget ind
+    if (jwt == null){
+        console.log("not logged in")
+        login_nav.hidden = false
+        logout_nav.hidden = true
+    // Logget ind
+    } else {
+        console.log("logged in")
+        login_nav.hidden = true
+        logout_nav.hidden = false
+    }
+
+
+    // Login modal reagerer på 'enter'
+    var input = document.getElementById("loginModal");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            login()
+        }
+    });
+
+
 }

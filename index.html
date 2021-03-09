@@ -12,17 +12,14 @@
   <!-- jQuery library -->
   <script src="js/jquery-3.1.1.min.js"></script>
 
-  <!-- Popper JS -->
-  <!--script src="js/popper.min.js"></script-->
-
   <!-- Latest compiled BootStrap JavaScript -->
   <script src="js/bootstrap.min.js"></script>
 
-  <!-- <link rel="stylesheet" href="css/base.css"> -->
   <!-- For charts/visualization -->
   <script src="js/Chart.min.js"></script>
 
   <script src="js/load-components.js"></script>
+  <script src="js/utils.js"></script>
 </head>
 
 <body onload="loadHTML()">
@@ -30,10 +27,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="placeholder-navbar">
 </nav>
 
-
-<!-- Stort billede. Synes det bør være i baggrunden med tekst over, hvis det overhovedet kan bruges
-<img src="pictures/plant_huge.jpg" style="width: 100%; clip: rect(0, auto, 600px, 0); position: absolute" >
--->
 
 <!-- JumboTron -->
 <div class="jumbotron jumbotron-fluid">
@@ -53,10 +46,6 @@
 <h5 class="text-center">Ved indskud af 100 kr</h5>
 
 <!-- Big graph -->
-<!--<div style="width:30%;height: 30%">-->
-<!--
-<div class="container" style="width:50%;height:50%">
--->
 <div class="container" style="margin-top: 2rem">
   <div class="row">
     <div class="col">
@@ -64,10 +53,6 @@
     </div>
   </div>
 </div>
-
-<!-- Horizontal line
-<hr style="border: 1px solid; color: #e9ecef" class="rounded">
--->
 
 <!-- Carousel -->
 <h2 class="text-center" style="margin-top: 2rem">Seneste odds</h2>
@@ -116,7 +101,15 @@
     </svg>
   </div>
 </div>
-<script src="js/main.js"></script>
+
+
+
+<!-- Modal HTML -->
+
+
+
+
+
 
 
 <!-- Modals / Pop ups. Loades af JS -->
@@ -126,6 +119,10 @@
 <footer id="placeholder_footer">
 </footer>
 
+
+<script>
+    load_index_data()
+</script>
 </body>
 </html>
 

@@ -10,19 +10,16 @@
   <!-- jQuery library -->
   <script src="js/jquery-3.1.1.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="js/popper.min.js"></script>
-
   <!-- Latest compiled BootStrap JavaScript -->
   <script src="js/bootstrap.min.js"></script>
 
-  <script src="js/html_populators.js"></script>
   <script src="js/load-components.js"></script>
+  <script src="js/utils.js"></script>
 
   <!-- <link rel="stylesheet" href="css/base.css"> -->
 
 </head>
-<body onload="loadHTML()">
+<body onload="loadHTML(true)">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="placeholder-navbar"></nav>
 
 <!-- JumboTron -->
@@ -45,6 +42,12 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
          viewBox="0 0 16 16">
       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <p style="display: inline">Ved Best of 3/5 spilformater spilles der på alle kampe, med samme odds</p>
+      <p></p>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+         viewBox="0 0 16 16">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
       <p style="display: inline">Spil kun for penge du har råd til at tabe eller søg</p> <a
             href="https://www.spillemyndigheden.dk/rofus" target="_blank" rel="noopener noreferrer">hjælp</a>
       <p></p>
@@ -60,16 +63,56 @@
     });
 </script>
 
-<!-- List of bets -->
-<h2 class="text-center">Kommende odds</h2>
+<h2 id="must_login_message" class="text-center" hidden>
+  <span class="text-center badge badge-dark align-middle">Du skal være logget ind og have betalt abonnement for at se denne side</span>
+  <br>
+  <span class="text-center badge badge-primary mt-4" data-toggle="modal" data-target="#loginModal" style="cursor:pointer">Log in</span>
+</h2>
+<!-- Det gamle
+<h2 id="incoming_bets_message" class="text-center" hidden>Kommende odds</h2>
 <div id="accordion"></div>
+-->
+
+
+<!-- List of bets -->
+<div id="incoming_bets_outer_div" class="container" hidden>
+  <div class="row">
+
+    <!-- Audi -->
+    <div class="col-sm-12">
+      <h2>Kommende odds</h2>
+      <div class="table-wrapper-scroll-y">
+        <table id="table-incoming-bets" class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th>Beskrivelse</th>
+            <th>Odds</th>
+            <th>Dato</th>
+            <th>Liga</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 <!-- Ser grimt ud når kommende bets loader på 0.5-2 sec, da footeren er helt i toppen af skærmen. Måske indsæt delay på load af footer? -->
 <!-- Modals / Pop ups. Loades af JS -->
-<!-- <div id="placeholder_all_modals"></div> -->
+ <div id="placeholder_all_modals"></div>
 <!-- Footer -->
 <!-- <footer id="placeholder_footer"></footer> -->
 
+
+
+<script>
+    load_main_data()
+</script>
 </body>
 </html>

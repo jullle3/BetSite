@@ -1,5 +1,5 @@
-//host = "https://biler-i-danmark-api.ew.r.appspot.com"
-host = "http://localhost:5000"
+host = "https://biler-i-danmark-api.ew.r.appspot.com"
+//host = "http://localhost:5000"
 
 function login() {
     let form = new FormData(document.getElementById("form_login"));

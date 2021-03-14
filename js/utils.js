@@ -1,4 +1,5 @@
-host = "https://biler-i-danmark-api.ew.r.appspot.com"
+//host = "https://biler-i-danmark-api.ew.r.appspot.com"
+host = "http://localhost:5000"
 
 function login() {
     let form = new FormData(document.getElementById("form_login"));
@@ -52,7 +53,6 @@ function create_user() {
         return
     }
 
-
     if (!valid_email(email1)){
         error_handler(error_text_ref, "Ugyldig email. <br>Prøv igen")
         return
@@ -64,12 +64,13 @@ function create_user() {
     }
 
     $.post(host + "/create_user", {email: email1, password: password1}, function (data) {
-        // Log brugeren ind
-        let jwt = data["jwt"]
-        window.localStorage.setItem("jwt", jwt)
-        document.getElementById("nav_logout").hidden = false
-        document.getElementById("nav_login").hidden = true
-        document.location = "main.html"
+        //document.getElementById("nav_logout").hidden = false
+        //document.getElementById("nav_login").hidden = true
+        //document.location = "main.html"
+        error_text_ref.style.color = "#19aa8d"
+        console.log(data)
+        error_text_ref.innerText = data["Message"]
+
     })
         .fail(function () {
             console.log("Failed!")
@@ -77,6 +78,42 @@ function create_user() {
         })
 }
 
+function reset_password() {
+    let error_text_ref = document.getElementById("new_password_text")
+    let form = new FormData(document.getElementById("form_reset_password"));
+    let email = form.get("email");
+    let password1 = form.get("password1");
+    let password2 = form.get("password2");
+
+
+    if (email.length === 0|| password1.length === 0 || password2.length === 0){
+        error_handler(error_text_ref, "Udfyld alle felter")
+        return
+    }
+
+    if (!valid_email(email)){
+        error_handler(error_text_ref, "Ugyldig email. <br>Prøv igen")
+        return
+    }
+
+    if (password1 !== password2){
+        error_handler(error_text_ref, "Passwords er ikke ens")
+        return
+    }
+
+    $.post(host + "/change_password", {email: email, password: password1}, function (data) {
+        error_text_ref.style.color = "#19aa8d"
+        console.log(data)
+        error_text_ref.innerText = data["Message"]
+        console.log("Password reset requested")
+
+    })
+        .fail(function (e) {
+            console.log("Failed!")
+            console.log(e)
+            error_handler(error_text_ref, e.responseText)  // Brug fejlen fra serveren?
+        })
+}
 
 function load_index_data() {
 
@@ -147,6 +184,8 @@ function load_index_data() {
 
 
 function load_main_data() {
+    let urlParams1 = new URLSearchParams(window.location.search);
+
     jwt = window.localStorage.getItem("jwt")
     // Ikke logget ind
     if (jwt == null) {
@@ -156,7 +195,8 @@ function load_main_data() {
     } else {
         $.ajax({
             headers: {
-                "Authorization": "Bearer " + jwt
+                "Authorization": "Bearer " + jwt,
+                "invoice_id": urlParams1.get("invoice")
             },
             dataType: "json",
             url: host + "/storage/get_upcoming_bets",
@@ -201,6 +241,11 @@ function load_main_data() {
                     td3.appendChild(span_date);  // -||-
                     td4.appendChild(span_league);  // -||-
                 }
+            },
+            error: function (error){
+                // Brugere behøver kun vide, at der mangler betaling. Alle fejlbeskederne udelader vi for dem... for deres skyld
+                document.getElementById("must_pay_message").hidden = false
+                console.log(error.responseText)
             }
         });
     }
@@ -270,4 +315,27 @@ function error_handler(error_element, error_text) {
 
 function valid_email(email){
     return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+}
+
+
+function get_charge_session(){
+    $.ajax({
+        headers: {
+            "Authorization": "Bearer " + window.localStorage.getItem("jwt")
+        },
+        dataType: "text",
+        url: host + "/create_charge_session",
+        success: function (payment_url) {
+            console.log(payment_url)
+            document.location = payment_url
+        },
+        error: function (error){
+            // Brugere behøver kun vide, at der mangler betaling. Alle fejlbeskederne udelader vi for dem... for deres skyld
+            //document.getElementById("must_pay_message").hidden = false
+            console.log(error.responseText)
+        }
+    })
+}
+
+function go_to_payment(){
 }

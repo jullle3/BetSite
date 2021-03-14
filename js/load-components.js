@@ -1,5 +1,5 @@
 var nav_bar =
-    '        <a class="navbar-brand" href="index.html">Find nu på et navn..:)</a>\n' +
+    '        <a class="navbar-brand" href="index.html">ODDS DYNASTIET</a>\n' +
     '        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">\n' +
     '            <span class="navbar-toggler-icon"></span>\n' +
     '        </button>\n' +
@@ -21,13 +21,14 @@ var all_modals =
     '\n' +
     '                    <!-- Modal Header -->\n' +
     '                    <div class="modal-header">\n' +
-    '                        <h4 class="modal-title">Kontakt</h4>\n' +
+    '                        <h4 class="modal-title">Hvordan virker det?</h4>\n' +
     '                        <button type="button" class="close" data-dismiss="modal">×</button>\n' +
     '                    </div>\n' +
     '\n' +
     '                    <!-- Modal body -->\n' +
     '                    <div class="modal-body">\n' +
-    '                        <p>Todo</p>\n' +
+    '                        <p>Systematisk og statistisk begrundede odds er det der udgør kernen i modellen.</p>\n' +
+    '                        <p>Modellen udvælger særligt gode odds, som den finder frem til på baggrund af større analyser.</p>\n' +
     '                    </div>\n' +
     '\n' +
     '                    <!-- Modal footer -->\n' +
@@ -62,7 +63,7 @@ var all_modals =
     '          <div class="form-group">\n' +
     '            <button type="button" class="btn btn-primary btn-block btn-lg" onclick="login()">Log ind</button>\n' +
     '          </div>\n' +
-    '          <p class="hint-text"><a href="#">Glemt password?</a></p>\n' +
+    '          <p class="hint-text"><a href="#" data-toggle="modal" data-target="#new_password_modal">Glemt kode?</a></p>\n' +
     '        </form>\n' +
     '      </div>\n' +
     '      <div class="modal-footer">Ny bruger? <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#create_user_modal">Opret her</a></div>\n' +
@@ -106,6 +107,41 @@ var all_modals =
     '        </form>\n' +
     '      </div>\n' +
     '      <!--<div class="modal-footer">Eksisterende bruger? <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log ind her</a></div> -->\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '</div>' +
+    '\n' +
+    '<div id="new_password_modal" class="modal fade" style="z-index: 5000">\n' +
+    '  <div class="modal-dialog modal-login">\n' +
+    '    <div class="modal-content">\n' +
+    '      <div class="modal-header">\n' +
+    '        <h4 class="modal-title" id="new_password_text">Nyt kodeord</h4>\n' +
+    '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n' +
+    '      </div>\n' +
+    '      <div class="modal-body">\n' +
+    '        <form id="form_reset_password">\n' +
+    '          <div class="form-group">\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-user"></i></span>\n' +
+    '              <input type="text" class="form-control" name="email" placeholder="Email" required="required">\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="form-group">\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n' +
+    '              <input type="password" class="form-control" name="password1" placeholder="Ny kode" required="required">\n' +
+    '            </div>\n' +
+    '            <div class="input-group">\n' +
+    '              <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n' +
+    '              <input type="password" class="form-control" name="password2" placeholder="Gentag ny kode" required="required">\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="form-group">\n' +
+    '            <button type="button" class="btn btn-primary btn-block btn-lg" onclick="reset_password()">Reset kode</button>\n' +
+    '          </div>\n' +
+    '        </form>\n' +
+    '      </div>\n' +
+    '      <div class="pb-8"><br><br><a href="#"></a></div>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '</div>' +

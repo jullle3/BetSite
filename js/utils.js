@@ -144,7 +144,7 @@ function load_index_data() {
 
 
         // Graph
-        var ctx = document.getElementById('myChart');
+        var ctx = document.getElementById('full_overview_chart');
         new Chart(ctx, {
             type: 'line',
             data: {
@@ -164,7 +164,9 @@ function load_index_data() {
                             beginAtZero: true
                         }
                     }]
-                }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
             }
         });
 
@@ -185,6 +187,8 @@ function load_index_data() {
 
 function load_main_data() {
     let urlParams1 = new URLSearchParams(window.location.search);
+    console.log(urlParams1)
+    console.log(urlParams1.get("invoice"))
 
     jwt = window.localStorage.getItem("jwt")
     // Ikke logget ind

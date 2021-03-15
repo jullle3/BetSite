@@ -73,12 +73,12 @@ var all_modals =
     '</div>' +
     '\n' +
 
-    '<div id="create_user_modal" class="modal fade" style="z-index: 5000; position: absolute">\n' +
-    '  <div class="modal-dialog modal-login">\n' +
+    '<div id="create_user_modal" class="modal fade" style="z-index: 5000">\n' +
+    '  <div class="">\n' +
     '    <div class="modal-content" style="min-height: 24rem">\n' +
     '      <div class="modal-header">\n' +
     '        <h4 class="modal-title" id="create_user_text">Opret bruger</h4>\n' +
-    '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n' +
+    '        <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>\n' +
     '      </div>\n' +
     '      <div class="modal-body">\n' +
     '        <form id="form_create_user">\n' +

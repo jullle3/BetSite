@@ -215,6 +215,7 @@ function load_main_data() {
                     bet = bets[i]
 
                     if (new Date(bet["date"]) > current_date) {
+                        bet["bet_multiplicator"] = "1337"
                         // Add new header row with only a date. Saves space on screen.. :)
                         console.log("Added new date header")
                         console.log(bet["date"])

@@ -1,29 +1,82 @@
 Vigtigt / must do:
-- Betaling skal implementeres på en eller anden måde
 - Kommende odds skal sorteres efter 'precise_date' i backend
 - udfyld "hvordan" modal
-- find navn.
-Oddsdynastiet
-Oddsemperiet
-esportodds
-esportbetting
-esports-betting
-- Opret bruger
-- Glemt kode
 
 
 Mindre vigtigt:
 - Y-aksen skal have "kr" tilføjet
 - Benchmark, hvad hvis der kommer rigtigt mange besøgende?
 - Branding på Instagram, Facebook og Twitter
+Drag inspiration fra: https://www.facebook.com/BET-AGENT-Odds-Spilforslag-100126715128407/about
 - Hvorfor er modellen pludselig ikke i minus mere? Forleden var den 200 kr i minus lige efter juli?
 - Flot modal animation    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
-- Man må kun kunne upload valide emails. https://www.w3resource.com/javascript/form/email-validation.php
 - Skal finde en måde at fremhæve at siden ikke forvalter folks penge, men derimod er en form for rådgivning
 - Seneste odds indeholder for mange tabte odds :)
-- saml javascript i én fil
-- Logo evt?
 - Beta launch kører 1-2 uger med venner som har gratis konti. ALT skal virke før der launches.
 - Hvis man ikke er logget ind og har betalt, vis da ét kommende odds, for at give folk blod på tanden?
 - God idé med abonnement, da folk glemmer at afmelde... :)
 - Ugentlig eller måned betaling? 29kr om ugen lyder sindsygt billigt, eller 39, 49.
+- Nyheds side hvor jeg deler blog lignende oplæg om modellen
+- Passwords må ikke være alt for svage (det svækker tilliden til siden)
+- FAQ
+- Kontakt
+- Mere clickbait på main.html så folk lokkes endnu mere til at købe abonnement!
+- Bør jeg måske benytte .nu domæne?
+- Færdiggør google adds konfiguration (med 600kr start bonus):
+https://ads.google.com/aw/campaigns/new/express?campaignId=12512189435&ocid=670166838&cmpnInfo=%7B%228%22%3A%228f67d88c-5d81-4037-b63e-b1d4704b1323%22%7D&subid=DK-da-xs-ip-gmb_aw_qual-sf-dw-acce&step=ccrt&cbdbId=-1716911612097784464&hl=da&authuser=5&uscid=670166838&__c=3813235462&euid=503155582&__u=5715599118
+- For hver uge med 0 odds, forlænges folks payment period med 1 uge. Dette SKAL gøres manuelt fra min side.
+- Synes alligevel footer har sin plads i main.html
+- FAQ
+- til terms of use:
+Alle odds er udelukkende af vejledende karakter. 
+- Flere typer af abonnement. Jo længere tid jo billigere for kunden
+- Sick hvis jeg kan sparre brugeren for at logge ind når de går fra at have aktiverer konti på mail til -> main.html. Måske giv en parameter med?
+- Lav forretningsplan
+https://virksomhedsguiden.dk/erhvervsfremme/content/ydelser/beskriv-og-test-din-forretningside/c1cdc809-27f8-4ae7-90a4-7943da445513/
+- Hvorfor får man ikke en mail med kvittering for betaling? virker det kun i live?
+- 2 knapper i bunden af index.html.
+1. "Få adgang til odds"
+2. "Historik"
+- Vejledning under main.html som dropdown eller lignende? fylder for meget pt
+- Måske lave ny 'must_pay_message' med flex-box (d-flex) https://getbootstrap.com/docs/4.0/utilities/flex/
+Bliv inspireret af netflix landing screen
+https://www.youtube.com/watch?v=P7t13SGytRk&ab_channel=TraversyMedia
+En anden
+https://www.reddit.com/r/WatchPeopleCode/comments/m5e488/simple_homepage_design_html_css/
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://goodui.org/
+- Måske fjerne 'Seneste odds' carousel? den giver også noget troværdighed dog
+
+Reepay
+support mail:
+support@reepay.com
+
+indløsningsaftale formular:
+https://admin.reepay.com/#/julian-k--larsen/julian-k--larsen/reepay-agreement
+
+RIGTIGE docs:
+    https://docs.reepay.com/reference#createchargesession
+
+Acquirer
+https://reepay.com/acquiring/
+
+Test cards
+https://reference.reepay.com/api/#testing
+
+
+
+
+- Fin layout til betaling hvis jeg tilbyder man kan vælge mellem mobilepay/kreditkort m.m. PT er der ikke brug for det
+https://bbbootstrap.com/snippets/bootstrap-pricing-plan-credit-card-payment-details-23640312
+
+- find navn. ( Vælger Oddsdynastiet)
+Oddsdynastiet
+Oddsemperiet
+esportodds
+esportbetting
+esports-betting
+League of Bet-gems
+Danskeodds
+Ebet365
+nordicebets

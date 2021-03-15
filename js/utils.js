@@ -222,8 +222,8 @@ function load_main_data() {
                         current_date = new Date(bet["date"])
 
                         let tr = table_ref.insertRow();  // row
-                        let th = document.createElement("th") // header
-                        th.setAttribute("colspan", "4")
+                        let th = document.createElement("td") // header
+                        th.setAttribute("colspan", "3")
 
                         let d = document.createElement("div")
                         d.className = "d-flex justify-content-center"

@@ -8,6 +8,7 @@ var nav_bar =
     '                <a class="nav-item nav-link" href="main.html">Kommende odds</a>\n' +
     '                <a class="nav-item nav-link" href="history.html">Historik</a>\n' +
     '                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>\n' +
+    '                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_kontakt">Kontakt</a>\n' +
     '                <a id="nav_login" class="nav-item nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log ind</a>\n' +
     '                <a id="nav_logout" onclick="logout()" class="nav-item nav-link" hidden style="cursor:pointer">Log ud</a>\n' +
     '            </div>\n' +
@@ -167,12 +168,13 @@ var footer =
     '                        <a class="nav-link" href="history.html"">Historik</a>\n' +
     '                        <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>\n' +
     '                        <a class="nav-link" href="#">FAQ</a>\n' +
+    '                        <a class="nav-link" href="#">Kontakt</a>\n' +
     '                    </div>\n' +
     '                </div>\n' +
     '            </div>\n' +
     '\n' +
     '            <div class="footer-copyright" style="color:#b1afaf">\n' +
-    '                <p>© 2021 Copyright SOME_NAME.dk. All Rights Reserved.</p>\n' +
+    '                <p>© 2021 Copyright oddsdynastiet.dk. All Rights Reserved.</p>\n' +
     '            </div>\n' +
     '        </div>'
 

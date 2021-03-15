@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Title</title>
@@ -37,8 +35,8 @@
 
     <!-- Alternativ titel -->
     <!--            <h1>Odds rådgivning der betaler sig!</h1> -->
-    <h1 id="index_jumbo1" style="margin-top:30px">Danmarks førende side til at finde de helt særlige vinder odds. N/A profit siden Juli
-      2020!</h1>
+    <h4 id="index_jumbo1" class="">Danmarks førende side til at finde de særligt gode odds. N/A profit siden Juli
+      2020!</h4>
     <p>Pengene retur for hvert måned uden profit</p>
   </div>
 </div>
@@ -61,53 +59,74 @@
 <h2 class="text-center" style="margin-top: 2rem">Seneste odds</h2>
 <div id="bet_carousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" id="carousel-inner-id"></div>
-  <a class="carousel-control-prev " href="#bet_carousel" data-slide="prev"><span
-          class="carousel-control-prev-icon"></span></a>
-  <a class="carousel-control-next" href="#bet_carousel" data-slide="next"><span
-          class="carousel-control-next-icon"></span></a>
+  <a class="carousel-control-prev" href="#bet_carousel" data-slide="prev">
+    <span class="carousel-control-prev-icon" ></span>
+  </a>
+  <a role="button" class="carousel-control-next" href="#bet_carousel" style="" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<div class="text-center pt-5">
+  <button type="button" class="btn btn-primary">Opret bruger for at se kommende odds</button>
+  <button type="button" class="btn btn-primary ml-2">Se Historiske odds</button>
 </div>
 
 
 <!-- JumboTron -->
 <div class="jumbotron jumbotron-fluid" style="margin-top: 2rem; margin-bottom: 0px;">
-  <div class="container text-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
-         viewBox="0 0 16 16">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <p style="display: inline">Pengene retur for hvert måned uden profit</p>
-      <p></p>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
-         viewBox="0 0 16 16">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <p style="display: inline">Odds findes med en verificeret og veludviklet model</p>
-      <p></p>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
-         viewBox="0 0 16 16">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <p id="index_jumbo2" style="display: inline">N/A profit siden Juli 2020</p>
-      <p></p>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
-         viewBox="0 0 16 16">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <!--<p style="display: inline">Spil på din foretrukne bookmaker</p> <p></p>-->
-      <p style="display: inline">5-10 nye odds om ugen</p>
-      <p></p>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
-         viewBox="0 0 16 16">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <p style="display: inline">Ingen binding</p>
-      <p></p>
-    </svg>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+             viewBox="0 0 16 16">
+          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <p style="display: inline">Pengene retur for hvert måned uden profit</p>
+          <p></p>
+        </svg>
+      </div>
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+             viewBox="0 0 16 16">
+          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <p style="display: inline">Odds findes med en verificeret og veludviklet model</p>
+          <p></p>
+        </svg>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+             viewBox="0 0 16 16">
+          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <p id="index_jumbo2" style="display: inline">N/A profit siden Juli 2020</p>
+          <p></p>
+        </svg>
+      </div>
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+             viewBox="0 0 16 16">
+          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <!--<p style="display: inline">Spil på din foretrukne bookmaker</p> <p></p>-->
+          <p style="display: inline">5-10 nye odds om ugen</p>
+          <p></p>
+        </svg>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dot"
+             viewBox="0 0 16 16">
+          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <p style="display: inline">Ingen binding</p>
+          <p></p>
+        </svg>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-
 
 
 
@@ -125,5 +144,3 @@
 </script>
 </body>
 </html>
-
-

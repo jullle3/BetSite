@@ -140,3 +140,9 @@ div.footer-copyright {
     100% { transform: skewX(0deg); }
 }
 
+
+/*, .carousel-arrows */
+.carousel-control-next,
+.carousel-control-prev  {
+    filter: invert(100%);
+}

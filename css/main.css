@@ -14,8 +14,8 @@ div.footer-copyright {
 
 /* Fixer bug som får hoizontal slidebar til at dukke op*/
 .row {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 
@@ -179,5 +179,10 @@ div.footer-copyright {
     }
     #seneste_odds h5  {
         font-size: 3vw;
+    }
+
+    /* History.html */
+    #table-history-body td {
+        font-size: 0.75rem;
     }
 }

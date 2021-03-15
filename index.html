@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Title</title>
+  <title>Odds Dynastiet</title>
   <!-- BootStrap css -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
@@ -35,16 +35,17 @@
 
     <!-- Alternativ titel -->
     <!--            <h1>Odds rådgivning der betaler sig!</h1> -->
-    <h4 id="index_jumbo1" class="">Danmarks førende side til at finde de særligt gode odds. N/A profit siden Juli
-      2020!</h4>
-    <p>Pengene retur for hvert måned uden profit</p>
+    <h1 id="index_jumbo1" class="display-4" style="font-weight: 500">Danmarks førende side til at finde de særligt gode odds. N/A profit siden Juli
+      2020!</h1>
   </div>
 </div>
 
 
-<h2 class="text-center">Profit for modellen</h2>
-<h1 id="index_historic_profit" class="text-center text-success">N/A kr</h1>
-<h5 class="text-center">Ved indskud af 100 kr</h5>
+<div id="profit">
+  <h2 class="text-center">Profit for modellen</h2>
+  <h1 id="index_historic_profit" class="text-center text-success">N/A kr</h1>
+  <h5 class="text-center">Ved indskud af 100 kr</h5>
+</div>
 
 <!-- Big graph -->
 <div class="container" style="margin-top: 2rem">
@@ -56,15 +57,18 @@
 </div>
 
 <!-- Carousel -->
-<h2 class="text-center" style="margin-top: 2rem">Seneste odds</h2>
-<div id="bet_carousel" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" id="carousel-inner-id"></div>
-  <a class="carousel-control-prev" href="#bet_carousel" data-slide="prev">
-    <span class="carousel-control-prev-icon" ></span>
-  </a>
-  <a role="button" class="carousel-control-next" href="#bet_carousel" style="" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
+<div id="seneste_odds">
+  <h2 class="text-center mt-4 pt-4"  >Seneste odds</h2>
+
+  <div id="bet_carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" id="carousel-inner-id"></div>
+    <a class="carousel-control-prev" href="#bet_carousel" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a role="button" class="carousel-control-next" href="#bet_carousel" style="" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
 </div>
 
 <!--<div class="text-center pt-5"> -->
@@ -73,6 +77,11 @@
   <a href="history.html">
     <button type="button" class="btn btn-primary ml-2">Se Historiske odds</button>
   </a>
+
+</div>
+
+<div class="text-center">
+  <p class="badge badge-pill badge-secondary" style="font-size: 1rem">x dage, x timer til næste odds spilles</p>
 </div>
 
 

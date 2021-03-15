@@ -209,32 +209,58 @@ function load_main_data() {
                 let bets = upcoming_bets
                 let table_ref = document.getElementById("table-incoming-bets").getElementsByTagName('tbody')[0];
 
+                let current_date = new Date("2010-1-1")  // Bare det er en dato før 2021 egentlig.. :)
                 len = bets.length
                 for (let i = 0; i < len; i++) {
-
-                    //bet = bets[len - (i + 1)]
                     bet = bets[i]
+
+                    if (new Date(bet["date"]) > current_date) {
+                        // Add new header row with only a date. Saves space on screen.. :)
+                        console.log("Added new date header")
+                        console.log(bet["date"])
+
+                        current_date = new Date(bet["date"])
+
+                        let tr = table_ref.insertRow();  // row
+                        let th = document.createElement("th") // header
+                        th.setAttribute("colspan", "4")
+
+                        let d = document.createElement("div")
+                        d.className = "d-flex justify-content-center"
+                        d.style = "margin-bottom: -1rem; font-size: 1.5rem;"
+
+                        let p = document.createElement("p")
+                        p.className = "badge badge-info badge-pill"
+                        p.style = "text-align: center;"
+                        p.innerHTML = "Odds d. " + bet["date"]
+
+                        tr.appendChild(th)
+                        th.appendChild(d)
+                        d.appendChild(p)
+                    }
+
                     let desc = bet["description"].split("odds")[0];  // hacky
                     let odds = bet["bet_multiplicator"];
-                    let date = bet["date"];
+                    //let date = bet["date"];
                     let league = bet["league"];
 
                     let tr = table_ref.insertRow();  // row
                     let td = tr.insertCell(0);  // celle på idx 0
+
                     let td2 = tr.insertCell(1);  // celle på idx 1
                     td2.style = "color: #1d5aaf; font-size: 1.5rem; font-weight:700"
-                    let td3 = tr.insertCell(2);  // celle på idx 2
-                    let td4 = tr.insertCell(3);  // celle på idx 3
+                    //let td3 = tr.insertCell(2);
+                    let td4 = tr.insertCell(2);
 
 
                     let text = document.createTextNode(desc);  // text til celle på idx 0
                     let text2 = document.createTextNode(odds);  // text til celle på idx 0
-                    let text3 = document.createTextNode(date);  // text til celle på idx 0
+                    //let text3 = document.createTextNode(date);  // text til celle på idx 0
                     let text4 = document.createTextNode(league);  // text til celle på idx 0
 
-                    let span_date = document.createElement("span");  // text til celle på idx 0
-                    span_date.className = 'badge badge-info badge-pill'
-                    span_date.innerText = date
+                    //let span_date = document.createElement("span");  // text til celle på idx 0
+                    //span_date.className = 'badge badge-info badge-pill'
+                    //span_date.innerText = date
 
                     let span_league = document.createElement("span");  // text til celle på idx 0
                     span_league.className = 'badge badge-info badge-pill'
@@ -242,7 +268,7 @@ function load_main_data() {
 
                     td.appendChild(text);  // tilføjer teksten til cellen
                     td2.appendChild(text2);  // -||-
-                    td3.appendChild(span_date);  // -||-
+                    //td3.appendChild(span_date);  // -||-
                     td4.appendChild(span_league);  // -||-
                 }
             },

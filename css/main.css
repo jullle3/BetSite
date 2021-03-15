@@ -162,6 +162,16 @@ div.footer-copyright {
     font-weight: bold;
 }
 
+#payment_box button {
+    width: 25rem;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 600px;
+    overflow: auto;
+}
+
 @media (max-width: 520px) {
     #index_jumbo1 {
         font-size: 4vw;
@@ -184,5 +194,16 @@ div.footer-copyright {
     /* History.html */
     #table-history-body td {
         font-size: 0.75rem;
+    }
+
+    #payment_box {
+        width: 22.5rem;
+    }
+    #payment_box button {
+        width: 20rem;
+    }
+
+    #payment_box p {
+        font-size: 0.95rem;
     }
 }

@@ -5,7 +5,7 @@ var nav_bar =
     '        </button>\n' +
     '        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">\n' +
     '            <div class="navbar-nav">\n' +
-    '                <a class="nav-item nav-link" href="main.html">Kommende odds</a>\n' +
+    '                <a id="nav_important_text" class="nav-item nav-link" href="main.html">Kommende odds</a>\n' +
     '                <a class="nav-item nav-link" href="history.html">Historik</a>\n' +
     '                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_hvordan">Hvordan virker det?</a>\n' +
     '                <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_kontakt">Kontakt</a>\n' +
@@ -74,8 +74,8 @@ var all_modals =
     '\n' +
 
     '<div id="create_user_modal" class="modal fade" style="z-index: 5000">\n' +
-    '  <div class="">\n' +
-    '    <div class="modal-content" style="min-height: 24rem">\n' +
+    '  <div class="modal-dialog modal-login">\n' +
+    '    <div class="modal-content"">\n' +
     '      <div class="modal-header">\n' +
     '        <h4 class="modal-title" id="create_user_text">Opret bruger</h4>\n' +
     '        <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>\n' +

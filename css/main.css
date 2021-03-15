@@ -30,7 +30,7 @@ div.footer-copyright {
 }
 .modal-login .modal-header {
     border-bottom: none;
-    position: relative;
+    /* position: relative; */
     justify-content: center;
 }
 .modal-login .close {
@@ -158,6 +158,9 @@ div.footer-copyright {
     flex-wrap: wrap;
 }
 
+#nav_important_text {
+    font-weight: bold;
+}
 
 @media (max-width: 520px) {
     #index_jumbo1 {
@@ -170,7 +173,6 @@ div.footer-copyright {
     #profit h5 {
         font-size: 3.5vw;
     }
-
 
     #seneste_odds h2  {
         font-size: 6vw;

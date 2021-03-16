@@ -211,19 +211,18 @@ function load_main_data() {
                 let bets = upcoming_bets
                 let table_ref = document.getElementById("table-incoming-bets").getElementsByTagName('tbody')[0];
 
-                let current_date = new Date("2010/1/1 00:00:00")  // Bare det er en dato før 2021 egentlig.. :)
+                let current_date = new Date("2010/1/1")  // Bare det er en dato før 2021 egentlig.. :)
                 len = bets.length
                 for (let i = 0; i < len; i++) {
                     bet = bets[i]
 
 
-                    if (new Date(bet["date"].replace(/-/g, '/') + " 00:00:00") > current_date) {  // Det her IF statement bliver aldrig true på iphone, wtf?
-                        bet["bet_multiplicator"] = 1337
+                    if (new Date(bet["date"].replace(/-/g, '/')) > current_date) {  // Det her IF statement bliver aldrig true på iphone, wtf?
                         // Add new header row with only a date. Saves space on screen.. :)
                         console.log("Added new date header")
                         console.log(bet["date"])
 
-                        current_date = new Date(bet["date"].replace(/-/g, '/') + " 00:00:00")
+                        current_date = new Date(bet["date"].replace(/-/g, '/'))
 
                         let tr = table_ref.insertRow();  // row
                         let th = document.createElement("td") // header

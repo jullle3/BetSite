@@ -370,5 +370,14 @@ function get_charge_session(){
     })
 }
 
-function go_to_payment(){
+function find_overflowing_elements() {
+    var docWidth = document.documentElement.offsetWidth;
+    [].forEach.call(
+        document.querySelectorAll('*'),
+        function(el) {
+            if (el.offsetWidth > docWidth) {
+                console.log(el);
+            }
+        }
+    );
 }

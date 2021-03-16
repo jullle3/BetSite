@@ -172,6 +172,20 @@ div.footer-copyright {
     overflow: auto;
 }
 
+.body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.forside-baggrund {
+    position: absolute;
+}
+
+.text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgba(36,38, 45,var(--tw-text-opacity));
+}
+
 @media (max-width: 520px) {
     #index_jumbo1 {
         font-size: 4vw;

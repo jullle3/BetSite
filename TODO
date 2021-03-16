@@ -1,7 +1,7 @@
 Vigtigt / must do:
 - Kommende odds skal sorteres efter 'precise_date' i backend
 - udfyld "hvordan" modal
-
+- Lav forside ligesom netflix ;) eller forsøg
 
 Mindre vigtigt:
 - Y-aksen skal have "kr" tilføjet
@@ -34,10 +34,6 @@ Alle odds er udelukkende af vejledende karakter.
 - Lav forretningsplan
 https://virksomhedsguiden.dk/erhvervsfremme/content/ydelser/beskriv-og-test-din-forretningside/c1cdc809-27f8-4ae7-90a4-7943da445513/
 - Hvorfor får man ikke en mail med kvittering for betaling? virker det kun i live?
-- 2 knapper i bunden af index.html.
-1. "Få adgang til odds"
-2. "Historik"
-- Vejledning under main.html som dropdown eller lignende? fylder for meget pt
 - Måske lave ny 'must_pay_message' med flex-box (d-flex) https://getbootstrap.com/docs/4.0/utilities/flex/
 Bliv inspireret af netflix landing screen
 https://www.youtube.com/watch?v=P7t13SGytRk&ab_channel=TraversyMedia
@@ -46,7 +42,13 @@ https://www.reddit.com/r/WatchPeopleCode/comments/m5e488/simple_homepage_design_
 https://css-tricks.com/snippets/css/complete-guide-grid/
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 https://goodui.org/
-- Måske fjerne 'Seneste odds' carousel? den giver også noget troværdighed dog
+- brug kort logoer  https://reepay.com/asset-library/
+
+
+Flotte billeder
+https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b
+https://unsplash.com/
+
 
 Reepay
 support mail:

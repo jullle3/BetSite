@@ -20,7 +20,6 @@ function login() {
         document.location = "main.html"
     })
         .fail(function () {
-            console.log("Failed!")
             error_handler(error_element, "Forkert brugernavn eller password.<br>Prøv igen")
         })
 }
@@ -68,12 +67,10 @@ function create_user() {
         //document.getElementById("nav_login").hidden = true
         //document.location = "main.html"
         error_text_ref.style.color = "#19aa8d"
-        console.log(data)
         error_text_ref.innerText = data["Message"]
 
     })
         .fail(function () {
-            console.log("Failed!")
             error_handler(error_text_ref, "En bruger med det denne email adresse eksisterer allerede")  // Brug fejlen fra serveren?
         })
 }
@@ -103,14 +100,9 @@ function reset_password() {
 
     $.post(host + "/change_password", {email: email, password: password1}, function (data) {
         error_text_ref.style.color = "#19aa8d"
-        console.log(data)
         error_text_ref.innerText = data["Message"]
-        console.log("Password reset requested")
-
     })
         .fail(function (e) {
-            console.log("Failed!")
-            console.log(e)
             error_handler(error_text_ref, e.responseText)  // Brug fejlen fra serveren?
         })
 }
@@ -179,23 +171,17 @@ function load_index_data() {
 
         ele = document.getElementById("index_historic_profit")
         ele.innerText = ele.innerText.replace("N/A", data["total_winnings"])
-
-        console.log("replaced")
     })
 }
 
 
 function load_main_data() {
     let urlParams1 = new URLSearchParams(window.location.search);
-    console.log(urlParams1)
-    console.log(urlParams1.get("invoice"))
 
     jwt = window.localStorage.getItem("jwt")
     // Ikke logget ind
     if (jwt == null) {
-        console.log("showing hidden field 'must_login_message'")
         document.getElementById("must_login_message").hidden = false
-        console.log("not logged in")
         // TODO: vis error message
     } else {
         $.ajax({
@@ -206,7 +192,6 @@ function load_main_data() {
             dataType: "json",
             url: host + "/storage/get_upcoming_bets",
             success: function (upcoming_bets) {
-                console.log("showing hidden field 'incoming_bets_outer_div'")
                 document.getElementById("incoming_bets_outer_div").hidden = false
                 let bets = upcoming_bets
                 let table_ref = document.getElementById("table-incoming-bets").getElementsByTagName('tbody')[0];
@@ -219,9 +204,6 @@ function load_main_data() {
 
                     if (new Date(bet["date"].replace(/-/g, '/')) > current_date) {  // Det her IF statement bliver aldrig true på iphone, wtf?
                         // Add new header row with only a date. Saves space on screen.. :)
-                        console.log("Added new date header")
-                        console.log(bet["date"])
-
                         current_date = new Date(bet["date"].replace(/-/g, '/'))
 
                         let tr = table_ref.insertRow();  // row
@@ -278,7 +260,6 @@ function load_main_data() {
             error: function (error){
                 // Brugere behøver kun vide, at der mangler betaling. Alle fejlbeskederne udelader vi for dem... for deres skyld
                 document.getElementById("must_pay_message").hidden = false
-                console.log(error.responseText)
             }
         });
     }
@@ -359,13 +340,11 @@ function get_charge_session(){
         dataType: "text",
         url: host + "/create_charge_session",
         success: function (payment_url) {
-            console.log(payment_url)
             document.location = payment_url
         },
         error: function (error){
             // Brugere behøver kun vide, at der mangler betaling. Alle fejlbeskederne udelader vi for dem... for deres skyld
             //document.getElementById("must_pay_message").hidden = false
-            console.log(error.responseText)
         }
     })
 }

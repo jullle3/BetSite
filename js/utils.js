@@ -193,6 +193,7 @@ function load_main_data() {
     jwt = window.localStorage.getItem("jwt")
     // Ikke logget ind
     if (jwt == null) {
+        console.log("showing hidden field 'must_login_message'")
         document.getElementById("must_login_message").hidden = false
         console.log("not logged in")
         // TODO: vis error message
@@ -205,22 +206,24 @@ function load_main_data() {
             dataType: "json",
             url: host + "/storage/get_upcoming_bets",
             success: function (upcoming_bets) {
+                console.log("showing hidden field 'incoming_bets_outer_div'")
                 document.getElementById("incoming_bets_outer_div").hidden = false
                 let bets = upcoming_bets
                 let table_ref = document.getElementById("table-incoming-bets").getElementsByTagName('tbody')[0];
 
-                let current_date = new Date("2010-1-1")  // Bare det er en dato før 2021 egentlig.. :)
+                let current_date = new Date("2010/1/1")  // Bare det er en dato før 2021 egentlig.. :)
                 len = bets.length
                 for (let i = 0; i < len; i++) {
                     bet = bets[i]
 
-                    if (new Date(bet["date"]) > current_date) {
+
+                    if (new Date(bet["date"].replace(/-/g, '/')) > current_date) {  // Det her IF statement bliver aldrig true på iphone, wtf?
                         bet["bet_multiplicator"] = 1337
                         // Add new header row with only a date. Saves space on screen.. :)
                         console.log("Added new date header")
                         console.log(bet["date"])
 
-                        current_date = new Date(bet["date"])
+                        current_date = new Date(bet["date"].replace(/-/g, '/'))
 
                         let tr = table_ref.insertRow();  // row
                         let th = document.createElement("td") // header

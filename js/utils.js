@@ -195,6 +195,7 @@ function load_main_data() {
                 document.getElementById("incoming_bets_outer_div").hidden = false
                 let bets = upcoming_bets
                 let table_ref = document.getElementById("table-incoming-bets").getElementsByTagName('tbody')[0];
+                let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
                 let current_date = new Date("2010/1/1")  // Bare det er en dato før 2021 egentlig.. :)
                 len = bets.length
@@ -217,7 +218,7 @@ function load_main_data() {
                         let p = document.createElement("p")
                         p.className = "badge badge-info badge-pill"
                         p.style = "text-align: center;"
-                        p.innerHTML = "Odds d. " + bet["date"]
+                        p.innerHTML = new Date(bet["date"].replace(/-/g, '/')).toLocaleDateString("DKK", options)
 
                         tr.appendChild(th)
                         th.appendChild(d)
